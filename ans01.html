@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ques.1)</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title></title>
+  </head>
+  <body class="bgcolr">
+    <div class="container-fluid">
+      <div class="container p-2">
+        <div class="row bg-secondary text-white m-2 p-2">
+          <div class="col-12">
+            <p><h5><u>Ques.1)</u> Write the regular definition and transition diagram for identifiers and reserved words?</h5></p>
+          </div>
+        </div>
+        <div class="row m-2 p-3 bg-info text-white">
+          <div class="col-12">
+            <h5>Answer:-<p> Giving names to regular expressions is referred to as a Regular definition.
+                            If Σ is an alphabet of basic symbols, then a regular definition is a sequence of definitions of the form</p>
+                            <p>dl → r 1</p>
+                            <p>d2 → r2</p>
+                            <p>………</p>
+                            <p>dn → rn</p>
+                            <ol class="p-3">
+                            <li>Each di is a distinct name.</li>
+                            <li>Each ri is a regular expression over the alphabet Σ U {dl, d2,. . . , di-l}.</li>
+                            </ol>
+                            <p>Example: Identifiers is the set of strings of letters and digits beginning with a letter. Regular
+                            definition for this set:</p>
+                            <p>letter → A | B | …. | Z | a | b | …. | z | digit → 0 | 1 | …. | 9</p>
+                            <p>id → letter ( letter | digit ) *</p>
+                          </h5>
+              <h3 class="text-center">Transition diagram for Identifiers</h3>
+
+              <h5>Transition diagram is a special kind of flowchart for language analysis.
+                In transition diagram the boxes of flowchart are drawn as circle and called as states.
+                States are connected by arrows called as edges. The label or weight on edge indicates the input character that can appear after that state.
+
+              Transition diagram of identifier is given below:
+
+              <img src="01.jpg" class="img-fluid rounded rounded mx-auto d-block m-2"  alt="Responsive image">
+
+              This transition diagram for identifier reading first letter and after that
+               letter or digit until the next input character is delimiter for identifier, means the character that is neither letter nor digit.
+               To turn up the transition diagram into a program we construct the program segment code for each state of transition diagram.
+               <div class="row p-2 m-2 bgcl">
+
+
+              <div class="col-12">
+                <p>State-0:
+                <p>
+                C=GETCHAR();</p>
+                <p>
+                if LETTER(C) then goto State 1</p><p>
+                else FAIL()</p></p>
+              </div>
+              </div>
+              <div class="row p-2 m-2 bgcl">
+                <div class="col-12">
+                  <p>
+                  State-1:
+                  <p>
+                  C=GETCHAR();</p><p>
+                  if LETTER(C) OR DIGIT(C) then goto State 1</p><p>
+                  else if DELIMITER(C) then goto State 2</p><p>
+                  else FAIL()</p>
+                  </p><p>
+                </div>
+              </div>
+              <div class="row p-2 m-2 bgcl">
+                <div class="col-12">
+                  <p>
+                  State-2:
+                  <p>
+                  RETRACT();</p><p>
+                  RETURN(ID, INSTALL())</p>
+                  </p><p>
+                </div>
+
+              </div>
+
+            Where,
+            Next character for input buffer we use GETCHAR() which return next character.
+            LETTER(C) is a procedure which returns the true value if and only if C is a letter.
+            FAIL(C) is a routine which RETRACT the look ahead pointer and start up the next transition diagram otherwise call error routine.
+            DIGIT(C) is a procedure which returns the true value if and only if C is a digit.
+            DELIMITER(C) is a procedure which returns the true value if and only if C Is a character that could follow the identifier for example blank symbol, arithmetic, logical operator, left parenthesis, right parenthesis, +, :, ; etc.
+            Because DELIMITER is not part of identifier therefore we must RETRACT the look ahead pointer one character for this purpose we use the RETRACT() procedure .
+            Because identifier has a value so to install the value of identifier in symbol table we use INSTALL() procedure.
+            </p>
+              <p> In a computer language, a reserved word (also known as a reserved identifier) is a word that cannot be used as an identifier,
+               such as the name of a variable, function, or label – it is "reserved from use".
+               This is a syntactic definition, and a reserved word may have no meaning.The lexical
+                analyzer also follows rule priority where a reserved word, e.g., a keyword, of a language is given priority over user input. That is,
+               if the lexical analyzer finds a lexeme that matches with any existing reserved word, it should generate an error. </p>
+            </h5>
+          </div>
+
+        </div>
+        <div class="row bg-white m-2 p-3">
+          <div class="col-12">
+            <a href="questions.html" class="btn btn-primary btn-lg btn-block"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Click To Go Back
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

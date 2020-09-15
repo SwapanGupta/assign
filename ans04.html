@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ques.4)</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title></title>
+  </head>
+  <body class="bgcolr">
+    <div class="container-fluid">
+      <div class="container p-2">
+        <div class="row bg-secondary text-white m-2 p-2">
+          <div class="col-12">
+            <p><h5><u>Ques.4)</u> Write about the following with respect to lexical analyzer?</h5></p>
+            <p><h5>i) Relationship with regular expressions and regular definitions</h5></p>
+            <p><h5> ii) Lexical errors.</h5></p>
+          </div>
+        </div>
+        <div class="row m-2 p-3 bg-info text-white">
+          <div class="col-12">
+            <h5>Answer:-<p>Lexical analysis is the first phase of a compiler.
+              It takes the modified source code from language preprocessors that are written
+               in the form of sentences. The lexical analyzer breaks these
+               syntaxes into a series of tokens, by removing any whitespace or comments in the source code.</p>
+
+                <p>If the lexical analyzer finds a token invalid, it generates an error.
+                The lexical analyzer works closely with the syntax analyzer.
+                It reads character streams from the source code, checks for legal tokens,
+                and passes the data to the syntax analyzer when it demands.</h5> </p>
+                <img src="08.jpg" class="img-fluid rounded rounded mx-auto d-block m-2"  alt="Responsive image">
+                <h2>i)Regular Expressions</h2>
+
+                <h5>
+                    <ol class="p-2">
+                      <li>The regular expressions over alphabet specifies a language according to the following rules.
+                            is a regular expression that denotes {}, that is, the set containing the empty string.</li>
+                      <li>If a is a symbol in alphabet, then a is a regular expression that denotes {a}, that is, the set containing the string a.</li>
+                      <li>Suppose r and s are regular expression denoting the languages L(r) and L(s). Then</li>
+                      <ul class="p-3">
+                          <li>(r)|(s) is a regular expression denoting L(r) U L(s).</li>
+                          <li>(r)(s) is a regular expression denoting L(r) L(s).</li>
+                          <li>(r)* is a regular expression denoting (L(r))*.</li>
+                          <li>(r) is a regular expression denoting L(r), that is, extra pairs of parentheses may be used around regular expressions.</li>
+                      </ul>
+                    </ol>
+                    <p>Unnecessary parenthesis can be avoided in regular expressions using the following conventions:</p>
+                    <ul class="p-3">
+                        <li>The unary operator * (kleene closure) has the highest precedence and is left associative.</li>
+                        <li>Concatenation has a second highest precedence and is left associative.</li>
+                        <li>Union has lowest precedence and is left associative.</li>
+                    </ul>
+                </h5>
+                <h2>Regular Definitions</h2>
+                <h5><p>A regular definition gives names to certain regular expressions and uses those names in other regular expressions.</p>
+
+                  <p>Here is a regular definition for the set of Pascal identifiers that is define as
+                  the set of strings of letter and digits beginning with a letters.</p>
+
+                      <p>letter → A | B | . . . | Z | a | b | . . . | z</p>
+                      <p>digit  → 0 | 1 | 2 | . . . | 9</p>
+                        <p> id  → letter (letter | digit)*</p>
+
+                  <p>The regular expression id is the pattern for the Pascal identifier token and defines letter and digit.</p>
+                  <p>Where letter is a regular expression for the set of all upper-case and lower
+                  case letters in the alphabet and digit is the regular for the set of all decimal digits.</p>
+
+                <p>The pattern for the Pascal unsigned token can be specified as follows:</p>
+
+                      <p>digit → 0 | 1 | 2 | . . . | 9</p>
+                      <p>digit → digit digit*</p>
+
+                      <p>Optimal-fraction     → . digits | ε</p>
+                      <p>Optimal-exponent  → (E (+ | - | ) digits) | ε</p>
+                                           <p>num  → digits optimal-fraction optimal-exponent.</p>
+
+                  <p>This regular definition says that</p>
+                  <ul class="p-3">
+                      <li>An optimal-fraction is either a decimal point followed by one or more digits
+                       or it is missing (i.e., an empty string).</li>
+                       <li>An optimal-exponent is either an empty string or it is the letter
+                      E followed by an ' optimal + or - sign, followed by one or more digits.</li>
+                  </ul>
+                  </h5>
+                  <h2>ii)Lexical Error</h2>
+                  <h5><p>During the lexical analysis phase this type of error can be detected.</p>
+                      <p>Lexical error is a sequence of characters that does
+                      not match the pattern of any token. Lexical phase error is found
+                      during the execution of the program.</p>
+                    <p>Lexical phase error can be:</p>
+                    <ul class="p-3">
+                      <li>Spelling error.</li>
+                      <li>Exceeding length of identifier or numeric constants.</li>
+                      <li>Appearance of illegal characters.</li>
+                      <li>To remove the character that should be present.</li>
+                      <li>To replace a character with an incorrect character.</li>
+                      <li>Transposition of two characters.</li>
+                    </ul>
+                    <p>Example:</p>
+                    <img src="09.jpg" class="img-fluid rounded rounded m-2"  alt="Responsive image">
+                    <p>In this code, 1xab is neither a number nor an identifier. So this code will show the lexical error.</p>
+                   </h5>
+
+            </div>
+          </div>
+      <div class="row bg-white m-2 p-3">
+        <div class="col-12">
+          <a href="questions.html" class="btn btn-primary btn-lg btn-block"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Click To Go Back
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

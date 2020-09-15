@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ques.2)</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title></title>
+  </head>
+  <body class="bgcolr">
+    <div class="container-fluid">
+      <div class="container p-2">
+        <div class="row bg-secondary text-white m-2 p-2">
+          <div class="col-12">
+            <p><h5><u>Ques.2)</u> What is the significance of Operator precedence?</h5></p>
+          </div>
+        </div>
+        <div class="row m-2 p-3 bg-info text-white">
+          <div class="col-12">
+            <h5>Answer:- <p>Operator precedence grammar is kinds of shift reduce parsing method.
+              It is applied to a small class of operator grammars.
+
+              A grammar is said to be operator precedence grammar if it has two
+              properties:
+              <ul class="p-3">
+              <li>No R.H.S. of any production has a∈.</li>
+              <li>No two non-terminals are adjacent.</li>
+            </ul>
+
+          Operator precedence can only established between the terminals of the grammar. It ignores the non-terminal.
+          There are the three operator precedence relations:
+        <ul class="p-3">
+        <li>  a ⋗ b means that terminal "a" has the higher precedence than terminal "b".</li>
+
+        <li>  a ⋖ b means that terminal "a" has the lower precedence than terminal "b".</li>
+
+        <li>  a ≐ b means that the terminal "a" and "b" both have same precedence.</p></li>
+        </ul>
+        Precedence table:
+            <img src="02.jpg" class="img-fluid rounded rounded mx-auto d-block m-2"  alt="Responsive image">
+            Parsing Action
+            <ul class="p-3">
+                <li>Both end of the given input string, add the $ symbol.</li>
+                <li>Now scan the input string from left right until the ⋗ is encountered.</li>
+                <li>Scan towards left over all the equal precedence until the first left most ⋖ is encountered.</li>
+                <li>Everything between left most ⋖ and right most ⋗ is a handle.</li>
+                <li>$ on $ means parsing is successful.</li>
+            </ul>
+            <p>Example</p>
+            <p>Grammar:</p>
+            <img src="03.jpg" class="img-fluid rounded rounded m-2"  alt="Responsive image">
+            <p>Given string:</p>
+            <img src="04.jpg" class="img-fluid rounded rounded m-2"  alt="Responsive image">
+            <p>Let us consider a parse tree for it as follows:</p>
+            <img src="05.jpg" class="img-fluid rounded rounded m-2"  alt="Responsive image">
+            <p>On the basis of above tree, we can design following operator precedence table:</p>
+            <img src="06.jpg" class="img-fluid rounded rounded m-2"  alt="Responsive image">
+            <p>Now let us process the string with the help of the above precedence table:</p>
+            <img src="07.jpg" class="img-fluid rounded rounded m-2"  alt="Responsive image">
+            <p>Advantages-</p>
+            The advantages of operator precedence parsing are-
+            <ul class="p-3">
+              <li>The implementation is very easy and simple.</li>
+              <li>The parser is quite powerful for expressions in programming languages.</li>
+            </ul>
+            <p>Disadvantages-</p>
+              The disadvantages of operator precedence parsing are-
+              <ul class="p-3">
+              <li>The handling of tokens known to have two different precedence becomes difficult.</li>
+              <li>Only small class of grammars can be parsed using this parser.</li>
+              </ul>
+              <p>Important Note-</p>
+               <ul class="p-3">
+                 <li>In practice, operator precedence table is not stored by the operator precedence parsers.</li>
+                 <li>This is because it occupies the large space.</li>
+                 <li>Instead, operator precedence parsers are implemented in a very unique style.</li>
+                 <li>They are implemented using operator precedence functions.</li>
+                </ul>
+              <p>Operator Precedence Functions-</p>
+              <ul class="p-3">
+              <li>To decide the precedence relation between symbols, a numerical comparison is performed.</li>
+              <li>It reduces the space complexity to a large extent.</li>
+              </ul>
+          </h5>
+        </div>
+        </div>
+        <div class="row bg-white m-2 p-3">
+          <div class="col-12">
+            <a href="questions.html" class="btn btn-primary btn-lg btn-block"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Click To Go Back
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
